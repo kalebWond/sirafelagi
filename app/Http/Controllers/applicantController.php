@@ -18,7 +18,7 @@ class applicantController extends Controller
     {
         $page = 'home';
         $user = Auth::guard('applicant')->user()->id; 
-        $jobs = job::all()->take(6);
+        $jobs = job::paginate(6);
         $notes = Auth::guard('applicant')->user()->notifications;
         return view('applicant.home')->with([
             'jobs' => $jobs,

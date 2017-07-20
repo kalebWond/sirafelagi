@@ -39,6 +39,9 @@ html body{
 	font-family: cursive;
 	width: 80%;
 }
+.collection{
+	position: fixed;
+}
 .que{
 	margin-top: 1.5em;
 	margin-left: 25px !important;

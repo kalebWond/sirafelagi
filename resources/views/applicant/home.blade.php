@@ -1,7 +1,8 @@
 @extends('applicant.layout.main')
 
 @section('content')
-<div class="row">
+<div class="row items">
+
 @foreach($jobs as $job)
   <div class="card col s5 hoverable">
     <div class="card-content">
@@ -24,5 +25,11 @@
     </div>
   </div>
 @endforeach
+</div>
+  <div class="loader"></div>
+<div class="fixed-action-btn">
+    <a id="next" class="btn btn-large red" href="{{ $jobs->nextPageUrl() }}">
+      More Jobs
+    </a>
 </div>
 @endsection

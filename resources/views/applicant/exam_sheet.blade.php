@@ -30,7 +30,7 @@
 			<label for="d">{{ $question->choices[3] }}</label>
 		</div>
 		 @if($questions->hasMorepages())
-		 	<input type="hidden" name="has_next" value="{{$questions->nextPageUrl()}}">
+		 	<input type="hidden" name="has_next" value="{{ $questions->nextPageUrl() }}">
 			<div class="next col s4 offset-s4">
 				<button id="more" type="submit" class="waves-effect waves-light btn" style="width: 100%;">Next</button>
 			</div>

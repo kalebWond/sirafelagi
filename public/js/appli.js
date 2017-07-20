@@ -1,4 +1,4 @@
-$('.apply').click(function(e) {
+$('.items').on('click','.apply', function(e) {
 	e.preventDefault();
 	$this = $(this);
 	var url = $this.attr('href');
@@ -26,4 +26,33 @@ $('.ok').click(function(e) {
 	// 		 $this.parents('.horizontal').remove();
 	// 	}
 	// });
+});
+
+$('#next').click(function (e) {
+	e.preventDefault();
+	var $this = $(this);
+	$('.loader').html('').append(`
+	  <div class="progress animated slidInUp" >
+	      <div class="indeterminate" style="margin-top:15px;"></div>
+	  </div>
+	`);
+	$.ajax({
+		url: $this.attr('href'),
+		method: 'GET',
+		complete: function () {
+			$('.progress').remove();
+		},
+		success: function(data) {
+			var $data = $(data),
+				 url = $(data).find('#next').attr('href');
+			if(url == ''){
+				$this.remove();
+			}
+			else{
+				$this.attr('href', url);
+			}
+			$data.find('.hoverable').appendTo('.items');
+			
+		}
+	});
 })
