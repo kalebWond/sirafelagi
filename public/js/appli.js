@@ -11,6 +11,8 @@ $('.items').on('click','.apply', function(e) {
 			$this.parents('div.card').find('.badge').remove();
 			$this.parents('div.card').find('.card-content').append(`<a class="btn disabled" style="margin-top:10px;">
 				Application Already Sent</a>`);
+			var count = $('.items').find('.disabled').length
+			$('.col.s3').find('.counter').html(count);
 		}
 	});
 });

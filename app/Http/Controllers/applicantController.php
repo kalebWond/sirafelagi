@@ -19,12 +19,14 @@ class applicantController extends Controller
         $page = 'home';
         $user = Auth::guard('applicant')->user()->id; 
         $jobs = job::paginate(6);
+        $apps = Auth::guard('applicant')->user()->applications;
         $notes = Auth::guard('applicant')->user()->notifications;
         return view('applicant.home')->with([
             'jobs' => $jobs,
             'page' => $page,
             'user' => $user,
-            'notes' => $notes
+            'notes' => $notes,
+            'apps' => $apps
             ]);
     }
 
@@ -42,25 +44,27 @@ class applicantController extends Controller
     {   
         $page = 'exam';
         $jobs = Auth::guard('applicant')->user()->jobs;
+        $apps = Auth::guard('applicant')->user()->applications;
         $notes = Auth::guard('applicant')->user()->notifications;
         return view('applicant.take_exam')->with([
             'page' => $page,
             'jobs' => $jobs,
-            'notes' => $notes
-
+            'notes' => $notes,
+            'apps' => $apps
             ]);
     }
 
     public function applicate()
     {
         $page = 'apply';
+        $apps = Auth::guard('applicant')->user()->applications;
         $applys = Auth::guard('applicant')->user()->jobs;
         $notes = Auth::guard('applicant')->user()->notifications;
         return view('applicant.applications')->with([
             'page' => $page,
             'applys' => $applys,
-            'notes' => $notes
-
+            'notes' => $notes,
+            'apps' => $apps
             ]);
     }
 
@@ -68,12 +72,13 @@ class applicantController extends Controller
     {
         $page = 'notify';
         $applys = Auth::guard('applicant')->user()->jobs;
+        $apps = Auth::guard('applicant')->user()->applications;
         $notes = Auth::guard('applicant')->user()->notifications;
         return view('applicant.notification')->with([
             'page' => $page,
             'applys' => $applys,
-            'notes' => $notes
-
+            'notes' => $notes,
+            'apps' => $apps
             ]);
     }
 

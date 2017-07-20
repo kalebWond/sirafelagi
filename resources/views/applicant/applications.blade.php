@@ -18,7 +18,7 @@
           <tr>
             <td>{{ $apply->name }}</td>
             <td>{{ $apply->company->name }}</td>
-            <td>{{ date("F J, Y", $apply->updated_at->timestamp )}}</td>
+            <td>{{ date("F d, Y", $apply->updated_at->timestamp )}}</td>
             <td><span class="red-text">Delete</span></td>
           </tr>
          @endforeach
