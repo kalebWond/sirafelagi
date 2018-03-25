@@ -7,14 +7,14 @@
         @foreach($questions as $question)
         <div id="pad{{$q}}" class="pad">
             <div class="question">
-              <span><strong style="margin-right: 7px;">{{$q}}</strong>{{ $question->question }}</span>
+              <span><strong style="margin-right: 7px;">{{$q ." "}}  {{ $question->question }}</strong></span>
               <span class="new badge" data-badge-caption="Click"></span>
             </div>
             <div class="row choice">
 
             @foreach($question->choices as $choice)
                   <input class="with-gap" id="choice{{$c}}" name="group1" type="radio"/>
-                  <label class="col s6"><span><strong>{{ $choice }}</strong></span></label>
+                  <label class="col s6" style="color: black;"><span>{{ $choice }}</span></label>
                   <?php $c++; ?>
             @endforeach
 

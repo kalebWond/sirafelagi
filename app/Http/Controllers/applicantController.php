@@ -106,13 +106,14 @@ class applicantController extends Controller
         $page = 'exam';
         if(count($id->questions)){
             $questions = $id->questions()->paginate(1);
-$notes = Auth::guard('applicant')->user()->notifications;
+        $notes = Auth::guard('applicant')->user()->notifications;
+        $apps = Auth::guard('applicant')->user()->applications;
             return view('applicant.exam_sheet')->with([
                 'page' => $page,
                 'questions' => $questions,
                 'exam'  => $id,
-                'notes' => $notes
-
+                'notes' => $notes,
+                'apps' => $apps
                 ]);
         }
         else{

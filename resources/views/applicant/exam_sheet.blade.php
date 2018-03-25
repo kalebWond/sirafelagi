@@ -15,19 +15,19 @@
 		<input type="hidden" name="total" value="{{ $questions->total() }}">
 		<div class="input-field col s8 offset-s1 choice">
 			<input type="radio" value="0" name="answer[]" id="a">
-			<label for="a">{{ $question->choices[0] }}</label>
+			<label for="a" style="color: black;">{{ $question->choices[0] }}</label>
 		</div>
 		<div class="input-field col s8 offset-s1 choice" >
 			<input type="radio" value="1" name="answer[]" id="b">
-			<label for="b">{{ $question->choices[1] }}</label>
+			<label for="b" style="color: black;">{{ $question->choices[1] }}</label>
 		</div>
 		<div class="input-field col s8 offset-s1 choice" >
 			<input type="radio" value="2" name="answer[]" id="c">
-			<label for="c">{{ $question->choices[2] }}</label>
+			<label for="c" style="color: black;">{{ $question->choices[2] }}</label>
 		</div>
 		<div class="input-field col s8 offset-s1 choice">
 			<input type="radio" value="3" name="answer[]" id="d">
-			<label for="d">{{ $question->choices[3] }}</label>
+			<label for="d" style="color: black;">{{ $question->choices[3] }}</label>
 		</div>
 		 @if($questions->hasMorepages())
 		 	<input type="hidden" name="has_next" value="{{ $questions->nextPageUrl() }}">

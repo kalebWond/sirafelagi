@@ -10,8 +10,8 @@
 			    <div class="card horizontal" style="margin: 10px 10px !important;">
 			      <div class="card-stacked">
 			        <div class="card-content">
-			    <h5 >Notification from</h5>
-			          <p><strong>{{ $note->job->name }}</strong></p>
+			          <p><h5 class="truncate" style="width: 300px;">{{ $note->job->company->name }}</h5></p>
+			          <b>{{ $note->job->name }}</b>
 			          <p>Go to their office for further Interview.</p>
 			        </div>
 			        <div class="card-action">

@@ -16,7 +16,6 @@ $('.que_edit').click(function(e){
 	e.preventDefault();
 	$('#edit_modal').modal();
 	$this = $(this);
-	console.log($this.attr('href'));
 	$.ajax({
 		url: $this.attr('href'),
 		method: 'GET',
