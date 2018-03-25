@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URI', 'http://localhost'),
+    'url' => env('APP_URI', 'https://localhost'),
 
     /*
     |--------------------------------------------------------------------------
