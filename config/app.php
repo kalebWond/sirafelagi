@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://jobfelagi'),
+    'url' => env('APP_URI', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
