@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => "https://jobfelagi.herokuapp.com/",
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
